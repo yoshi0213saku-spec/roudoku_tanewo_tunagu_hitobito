@@ -288,7 +288,7 @@ const $=id=>document.getElementById(id);
 const audio=$("audio");
 const state={cur:null,view:null,urls:{},src:{},rate:1,cont:true,fs:19};
 const RATES=[0.8,1,1.25];
-try{const s=JSON.parse(localStorage.getItem("tane-prefs")||"{}");Object.assign(state,{rate:s.rate||1,cont:s.cont!==false,fs:s.fs||19});}catch(e){}
+try{const s=JSON.parse(localStorage.getItem("tane-prefs")||"{}");Object.assign(state,{rate:s.rate||1,cont:true,fs:s.fs||19})   // 連続再生は開くたびに「入」から始める;}catch(e){}
 function savePrefs(){try{localStorage.setItem("tane-prefs",JSON.stringify({rate:state.rate,cont:state.cont,fs:state.fs}))}catch(e){}}
 
 /* --- この端末への保存（IndexedDB） --- */
